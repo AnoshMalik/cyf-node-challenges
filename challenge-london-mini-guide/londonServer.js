@@ -13,51 +13,85 @@ app.get("/", (request, response) => {
 });
 
 // PHARMACIES DIRECTORY
-app.get("/:city/pharmacies/", (request, response) => {
+app.get("/:city/:category/", (request, response) => {
   // response.send(returnPharmacies(stratfordObject));
 
-  if (request.params.city == "stratford") {
+  if (
+    request.params.city == "stratford" &&
+    request.params.category == "pharmacies"
+  ) {
     response.send(returnPharmacies(stratfordObject));
-  } else if (request.params.city == "heathrow") {
+  } else if (
+    request.params.city == "heathrow" &&
+    request.params.category == "pharmacies"
+  ) {
     response.send(returnPharmacies(heathrowObject));
-  } else if (request.params.city == "harrow") {
+  } else if (
+    request.params.city == "harrow" &&
+    request.params.category == "pharmacies"
+  ) {
     response.send(returnPharmacies(harrowObject));
   } else {
-   response.send("PATH NOT FOUND");
+    response.send("PATH NOT FOUND");
   }
 });
 
 // COLLEGES DIRECTORY
-app.get("/:city/colleges", (request, response) => {
- if (request.params.city == "stratford") {
+app.get("/:city/:category", (request, response) => {
+ if (
+   request.params.city == "stratford" &&
+   request.params.category == "colleges"
+ ) {
    response.send(returnColleges(stratfordObject));
- } else if (request.params.city == "heathrow") {
+ } else if (
+   request.params.city == "heathrow" &&
+   request.params.category == "colleges"
+ ) {
    response.send(returnColleges(heathrowObject));
- } else if (request.params.city == "harrow") {
+ } else if (
+   request.params.city == "harrow" &&
+   request.params.category == "colleges"
+ ) {
    response.send(returnColleges(harrowObject));
  } else {
    response.send("PATH NOT FOUND");
  }});
 
 // DOCTORS DIRECTORY
-app.get("/:city/doctors", (request, response) => {
- if (request.params.city == "stratford") {
+app.get("/:city/:category", (request, response) => {
+ if (
+   request.params.city == "stratford" &&
+   request.params.category == "doctors"
+ ) {
    response.send(returnDoctors(stratfordObject));
- } else if (request.params.city == "heathrow") {
+ } else if (
+   request.params.city == "heathrow" &&
+   request.params.category == "doctors"
+ ) {
    response.send(returnDoctors(heathrowObject));
- } else if (request.params.city == "harrow") {
+ } else if (
+   request.params.city == "harrow" &&
+   request.params.category == "doctors"
+ ) {
    response.send(returnDoctors(harrowObject));
  } else {
    response.send("PATH NOT FOUND");
  }});
 
 // HOSPITALS DIRECTORY
-app.get(`/:city/hospitals`, (request, response) => {
- if (request.params.city == "stratford") {
+app.get(`/:city/:category`, (request, response) => {
+ if (request.params.city == "stratford" && 
+    request.params.category =="hospitals") {
    response.send(returnHospitals(stratfordObject));
- } else if (request.params.city == "heathrow") {
+ } else if (
+   request.params.city == "heathrow" &&
+   request.params.category == "hospitals"
+ ) {
    response.send(returnHospitals(heathrowObject));
- } else if (request.params.city == "harrow") {
+ } else if (
+   request.params.city == "harrow" &&
+   request.params.category == "hospitals"
+ ) {
    response.send(returnHospitals(harrowObject));
  } else {
    response.send("PATH NOT FOUND");
