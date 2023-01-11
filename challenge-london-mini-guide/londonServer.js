@@ -5,7 +5,7 @@ const stratfordObject = require("./data/Stratford.json");
 const heathrowObject = require("./data/Heathrow.json");
 const harrowObject = require("./data/Harrow.json");
 
-// 
+// SERVER Level 500 Working
 app.get("/", (request, response) => {
     response.send("Returning no specific value. CHANGE ROUTE");
     
