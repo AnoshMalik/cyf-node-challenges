@@ -13,7 +13,7 @@ app.get("/", (request, response) => {
 });
 
 // PHARMACIES DIRECTORY
-app.get(":city/pharmacies/", (request, response) => {
+app.get("/:city/pharmacies/", (request, response) => {
   // response.send(returnPharmacies(stratfordObject));
 
   if (request.params.city == "stratford") {
