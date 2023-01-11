@@ -37,7 +37,7 @@ app.get("/:city/:category/", (request, response) => {
 });
 
 // COLLEGES DIRECTORY
-app.get("/:city/:category", (request, response) => {
+app.get("/:city/:category/", (request, response) => {
  if (
    request.params.city == "stratford" &&
    request.params.category == "colleges"
@@ -58,7 +58,7 @@ app.get("/:city/:category", (request, response) => {
  }});
 
 // DOCTORS DIRECTORY
-app.get("/:city/:category", (request, response) => {
+app.get("/:city/:category/", (request, response) => {
  if (
    request.params.city == "stratford" &&
    request.params.category == "doctors"
@@ -79,7 +79,7 @@ app.get("/:city/:category", (request, response) => {
  }});
 
 // HOSPITALS DIRECTORY
-app.get(`/:city/:category`, (request, response) => {
+app.get("/:city/:category/", (request, response) => {
  if (request.params.city == "stratford" && 
     request.params.category =="hospitals") {
    response.send(returnHospitals(stratfordObject));
