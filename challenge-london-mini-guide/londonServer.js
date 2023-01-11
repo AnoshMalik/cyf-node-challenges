@@ -2,27 +2,43 @@ const express = require("express");
 const app = express();
 const port = 3030;
 const stratfordObject = require("./data/Stratford.json");
+const heathrowObject = require("./data/Heathrow.json");
+const harrowObject = require("./data/Harrow.json");
 
 // 
 app.get("/", (request, response) => {
     response.send("Returning no specific value. CHANGE ROUTE");
+    
 
 });
 
 // PHARMACIES DIRECTORY
-app.get("/pharmacies", (request, response) => {
-  response.send(returnPharmacies(stratfordObject));
+app.get(":city/pharmacies/", (request, response) => {
+  // response.send(returnPharmacies(stratfordObject));
+
+  if (request.params.city == "stratford") {
+    response.send(returnPharmacies(stratfordObject));
+  } else if (request.params.city == "heathrow") {
+    response.send(returnPharmacies(heathrowObject));
+  } else if (request.params.city == "harrow") {
+    response.send(returnPharmacies(harrowObject));
+  } else {
+    response.send(returnPharmacies(harrowObject));
+  }
 });
 
-app.get("/colleges", (request, response) => {
+// COLLEGES DIRECTORY
+app.get(":city/colleges", (request, response) => {
   response.send(returnColleges(stratfordObject));
 });
 
-app.get("/doctors", (request, response) => {
+// DOCTORS DIRECTORY
+app.get(":city/doctors", (request, response) => {
   response.send(returnDoctors(stratfordObject));
 });
 
-app.get("/hospitals", (request, response) => {
+// HOSPITALS DIRECTORY
+app.get(`:city/hospitals`, (request, response) => {
   response.send(returnHospitals(stratfordObject));
 });
 
