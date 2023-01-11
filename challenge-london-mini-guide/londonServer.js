@@ -23,24 +23,45 @@ app.get("/:city/pharmacies/", (request, response) => {
   } else if (request.params.city == "harrow") {
     response.send(returnPharmacies(harrowObject));
   } else {
-    response.send(returnPharmacies(harrowObject));
+   response.send("PATH NOT FOUND");
   }
 });
 
 // COLLEGES DIRECTORY
-app.get(":city/colleges", (request, response) => {
-  response.send(returnColleges(stratfordObject));
-});
+app.get("/:city/colleges", (request, response) => {
+ if (request.params.city == "stratford") {
+   response.send(returnColleges(stratfordObject));
+ } else if (request.params.city == "heathrow") {
+   response.send(returnColleges(heathrowObject));
+ } else if (request.params.city == "harrow") {
+   response.send(returnColleges(harrowObject));
+ } else {
+   response.send("PATH NOT FOUND");
+ }});
 
 // DOCTORS DIRECTORY
-app.get(":city/doctors", (request, response) => {
-  response.send(returnDoctors(stratfordObject));
-});
+app.get("/:city/doctors", (request, response) => {
+ if (request.params.city == "stratford") {
+   response.send(returnDoctors(stratfordObject));
+ } else if (request.params.city == "heathrow") {
+   response.send(returnDoctors(heathrowObject));
+ } else if (request.params.city == "harrow") {
+   response.send(returnDoctors(harrowObject));
+ } else {
+   response.send("PATH NOT FOUND");
+ }});
 
 // HOSPITALS DIRECTORY
-app.get(`:city/hospitals`, (request, response) => {
-  response.send(returnHospitals(stratfordObject));
-});
+app.get(`/:city/hospitals`, (request, response) => {
+ if (request.params.city == "stratford") {
+   response.send(returnHospitals(stratfordObject));
+ } else if (request.params.city == "heathrow") {
+   response.send(returnHospitals(heathrowObject));
+ } else if (request.params.city == "harrow") {
+   response.send(returnHospitals(harrowObject));
+ } else {
+   response.send("PATH NOT FOUND");
+ }});
 
 
 app.listen(port, () => {
