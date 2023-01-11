@@ -18,17 +18,17 @@ app.get("/:city/:category/", (request, response) => {
 
   if (
     request.params.city == "stratford" &&
-    request.params.category == "pharmacies"
+    request.params["category"] == "pharmacies"
   ) {
     response.send(returnPharmacies(stratfordObject));
   } else if (
     request.params.city == "heathrow" &&
-    request.params.category == "pharmacies"
+    request.params["category"] == "pharmacies"
   ) {
     response.send(returnPharmacies(heathrowObject));
   } else if (
     request.params.city == "harrow" &&
-    request.params.category == "pharmacies"
+    request.params["category"] == "pharmacies"
   ) {
     response.send(returnPharmacies(harrowObject));
   } else {
@@ -40,17 +40,17 @@ app.get("/:city/:category/", (request, response) => {
 app.get("/:city/:category/", (request, response) => {
  if (
    request.params.city == "stratford" &&
-   request.params.category == "colleges"
+   request.params["category"] == "colleges"
  ) {
    response.send(returnColleges(stratfordObject));
  } else if (
    request.params.city == "heathrow" &&
-   request.params.category == "colleges"
+   request.params["category"] == "colleges"
  ) {
    response.send(returnColleges(heathrowObject));
  } else if (
    request.params.city == "harrow" &&
-   request.params.category == "colleges"
+   request.params["category"] == "colleges"
  ) {
    response.send(returnColleges(harrowObject));
  } else {
@@ -61,17 +61,17 @@ app.get("/:city/:category/", (request, response) => {
 app.get("/:city/:category/", (request, response) => {
  if (
    request.params.city == "stratford" &&
-   request.params.category == "doctors"
+   request.params["category"] == "doctors"
  ) {
    response.send(returnDoctors(stratfordObject));
  } else if (
    request.params.city == "heathrow" &&
-   request.params.category == "doctors"
+   request.params["category"] == "doctors"
  ) {
    response.send(returnDoctors(heathrowObject));
  } else if (
    request.params.city == "harrow" &&
-   request.params.category == "doctors"
+   request.params["category"] == "doctors"
  ) {
    response.send(returnDoctors(harrowObject));
  } else {
